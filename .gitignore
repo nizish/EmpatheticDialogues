@@ -11,3 +11,4 @@ dist/
 
 # Repo-specific
 retrieved_split_*
+.venv/

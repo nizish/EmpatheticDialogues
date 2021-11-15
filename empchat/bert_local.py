@@ -58,7 +58,8 @@ class BertAdapter(nn.Module):
                 self.ctx_bert.bert_model.embeddings.word_embeddings,
                 self.cand_bert.bert_model.embeddings.word_embeddings,
             ]:
-                embeddings.weight[token_idx] = rand_embedding
+                with torch.no_grad():
+                    embeddings.weight[token_idx] = rand_embedding
         self.ctx_bert.bert_model.embeddings.word_embeddings.weight.detach_()
         self.cand_bert.bert_model.embeddings.word_embeddings.weight.detach_()
 
