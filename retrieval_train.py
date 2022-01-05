@@ -263,8 +263,8 @@ def main(opt_):
         test_data = env.build_valid_dataloader(False, test=True)
         with torch.no_grad():
             net.eval()
-            print(valid_data)
-            print(next(iter(valid_data)))
+            fields = next(iter(valid_data))
+            torch.onnx.export(net, fields, "my-model.onnx", verbose=True)
             return
             logging.info("Validating on the valid set -unshuffled")
             validate(
