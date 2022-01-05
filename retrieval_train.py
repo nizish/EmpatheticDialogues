@@ -262,6 +262,9 @@ def main(opt_):
         valid_data = env.build_valid_dataloader(False)
         test_data = env.build_valid_dataloader(False, test=True)
         with torch.no_grad():
+            net.eval()
+            print(valid_data)
+            return
             logging.info("Validating on the valid set -unshuffled")
             validate(
                 0, net, valid_data, is_test=False, nb_candidates=opt_.hits_at_nb_cands
