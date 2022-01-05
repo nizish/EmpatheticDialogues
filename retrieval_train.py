@@ -264,6 +264,7 @@ def main(opt_):
         with torch.no_grad():
             net.eval()
             print(valid_data)
+            print(next(valid_data))
             return
             logging.info("Validating on the valid set -unshuffled")
             validate(
