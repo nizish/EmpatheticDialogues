@@ -250,6 +250,9 @@ def train_model(opt_):
 
 
 def main(opt_):
+    print(opt)
+    print(vars(opt))
+    return
     if opt_.pretrained:
         net, dictionary = load_model(opt_.pretrained, opt_)
         net.opt.dataset_name = opt_.dataset_name
