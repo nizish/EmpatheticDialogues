@@ -252,7 +252,7 @@ def train_model(opt_):
 def main(opt_):
     print(opt)
     print(vars(opt))
-    print({k: v for k, v in vars(opt) if "emp" in k})
+    print({k: v for k, v in vars(opt).items() if "emp" in k})
     return
     if opt_.pretrained:
         net, dictionary = load_model(opt_.pretrained, opt_)
